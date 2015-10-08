@@ -1,2 +1,27 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<article>
+
+    <h1>Thanks, <%= @user.name %></h1>
+  <div>
+    <div >
+      <%= form_for @user do |f| %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :age %>
+          <%= f.text_field :age, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :location, "Class" %>
+          <%= f.text_field :location, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :about_you %>
+          <%= f.text_area :about_you, class: "form-control" %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</article>

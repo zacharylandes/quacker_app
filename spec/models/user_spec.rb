@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "Creates" do
+    let(:user) {FactoryGirl.build(:user)}
+    it "a new user upon form subission" do
+      expect{
+        user.save
+      }.to change{ User.count}.by(+1)
+    end
+  end
 end
