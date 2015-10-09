@@ -1,0 +1,8 @@
+<h1>Create Your Profile</h1>
+<%= form_for :user, url: users_path do |f| %>
+  Name: <%= f.text_field :name %><br />
+  Age: <%= f.text_field :age %><br />
+  Location: <%= f.text_field :location %><br />
+  About you: <%= f.text_area :about_you %><br />
+  <%= f.submit "Create Profile" %>
+<% end %>
