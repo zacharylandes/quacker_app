@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root 'site#index'
   get '/register' => 'site#register'
+  post '/search_results' => 'search_results#search_results'
 
   resources :users
   resources :messages
