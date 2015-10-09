@@ -14,11 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
     @user = User.find(params[:id])
-=======
-
->>>>>>> e7d53cfcf17da18ab7f9d40dbc9412f009c59aa8
   end
 
   def update
