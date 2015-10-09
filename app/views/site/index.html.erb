@@ -4,7 +4,7 @@
 
 <ul>
   <% @messages.each do |message| %>
-    <h3><%= message.user.name %></h3>
+    <h3><%= link_to message.user.name, user_path(@user.id) %></h3>
     <li><%= message.subject %></li>
     <li><%= message.content %></li>
   <%end%>

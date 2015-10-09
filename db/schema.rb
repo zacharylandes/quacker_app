@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
 ActiveRecord::Schema.define(version: 20151009013836) do
-
 
   create_table "messages", force: :cascade do |t|
     t.string   "subject"
@@ -25,7 +22,6 @@ ActiveRecord::Schema.define(version: 20151009013836) do
   end
 
   add_index "messages", ["user_id"], name: "index_messages_on_user_id"
-
 
   create_table "search_results", force: :cascade do |t|
     t.datetime "created_at", null: false
