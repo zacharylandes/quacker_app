@@ -1,0 +1,17 @@
+<h1>Search Results</h1>
+
+<table>
+  <tr>
+    <th>Search Results</th>
+  </tr>
+
+<% @post.each do |post|
+  if post.subject.include?(@substring) || post.message.include?(@substring)
+  %>
+    <tr>
+      <td>
+        <%= link_to "#{post}", post_path(post.id) %></td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>

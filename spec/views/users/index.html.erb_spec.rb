@@ -10,10 +10,7 @@ RSpec.describe "users/index.html.erb", type: :feature do
   it "should click user and redirect to that user's page" do
     new_user
     visit users_path
-    click_link('MyString')
-    expect(page).to have_content('MyText')
-  end
-  it 'should have number of links equal to number of users' do
-
+    click_on('MyString')
+    expect(page).to have_content('MyString')
   end
 end
