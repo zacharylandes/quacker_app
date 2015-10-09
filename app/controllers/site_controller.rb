@@ -1,7 +1,8 @@
 class SiteController < ApplicationController
   def index
     @messages = Message.all
-    @user = User.find(params[:id])
+    # debugger
+    # @user = User.find(params[:id])
   end
 
   def register

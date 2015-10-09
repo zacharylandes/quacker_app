@@ -61,3 +61,14 @@ code {
  list-style-type: none;
 
 }
+.space_div{
+  font-size: 24px;
+}
+
+.space_div a{
+  font-size: 16px;
+}
+
+.content {
+  font-size: 18px;
+}

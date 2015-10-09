@@ -7,11 +7,11 @@
 
 
     <div class="space_div">
-
-    <h3><%= link_to message.user.name, user_path(@user) %></h3>
+    <h3><%= link_to message.user.name, user_path(message.user)  %></h3>
 
     <li><%= message.subject %></li>
-    <li><%= message.content %></li>
+    <li class = 'content'><%= message.content %></li>
+    <li>---------------------------------------------------------------------------------</li>
     </div>
   <%end%>
 </ul>
