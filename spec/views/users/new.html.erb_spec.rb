@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "users/new.html.erb", type: :feature do
-  describe'has ' do
+  describe'shows ' do
     it 'has the new user form' do
       visit new_user_path
     expect(page).to have_content('Create Your Profile')

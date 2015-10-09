@@ -8,24 +8,25 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+    let(:user) {FactoryGirl.create(:user)}
+
   describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
+     it "redirects to new users profile" do
+      expect(response).to redirect_to(user_path(user[:id]))
     end
   end
 
-  describe "GET #create" do
+  describe "create" do
     it "returns http success" do
-      get :create
-      expect(response).to have_http_status(:success)
-    end
-  end
+        post :show
+      expect(response).to redirect_to(user_path)
+      end
+     end
 
   describe "GET #show" do
     it "returns http success" do
       get :show
-      expect(response).to have_http_status(:success)
+      expect(response).to render_template('user_path')
     end
   end
 
