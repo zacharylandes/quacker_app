@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'messages/index'
+
+  get 'messages/create'
+
   root 'site#index'
   get '/register' => 'site#register'
 

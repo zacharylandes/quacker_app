@@ -13,8 +13,8 @@ class UsersController < ApplicationController
   end
 
   def show
- @user = User.find(params[:id])
- @message = @user.messages.new
+    @user = User.find(params[:id])
+    @message = @user.messages.new
 
   end
 
