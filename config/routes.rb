@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'site#index'
   get '/register' => 'site#register'
+  post '/search_results' => 'search_results#search_results'
 
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
