@@ -1,8 +1,15 @@
 class SiteController < ApplicationController
   def index
-    @title = 'Welcome!'
+    @messages = Message.all
   end
 
   def register
   end
+
+
+  private
+  def message_params
+    params.require(:message).permit(:subject,:content)
+  end
+
 end

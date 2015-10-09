@@ -2,3 +2,12 @@
 <%= @title %>
 
 
+<ul>
+  <% @messages.each do |message| %>
+    <h3><%= message.user.name %></h3>
+    <li><%= message.subject %></li>
+    <li><%= message.content %></li>
+  <%end%>
+</ul>
+
+
