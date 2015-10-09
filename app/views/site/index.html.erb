@@ -4,14 +4,20 @@
 
 <ul>
   <% @messages.each do |message| %>
-    <h3><%= link_to message.user.name, user_path(@user.id) %></h3>
+
+
+    <div class="space_div">
+
+    <h3><%= link_to message.user.name, user_path(@user) %></h3>
+
     <li><%= message.subject %></li>
     <li><%= message.content %></li>
+    </div>
   <%end%>
 </ul>
 
 
-  <form method="post" action="/contact">
+<!--   <form method="post" action="/contact">
     <fieldset class="col-sm-6">
       <div class="form-group">
         <label for="message">Search: </label>
@@ -22,3 +28,4 @@
       </div>
     </fieldset>
   </form>
+ -->

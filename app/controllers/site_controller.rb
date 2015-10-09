@@ -10,7 +10,7 @@ class SiteController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:subject,:content)
+    params.require(:message).permit(:subject,:content, :id)
   end
 
 end
