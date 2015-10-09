@@ -1,4 +1,3 @@
-class Message
+class Message < ActiveRecord::Base
   belongs_to :user
-  attr_accessor :subject, :content
 end
