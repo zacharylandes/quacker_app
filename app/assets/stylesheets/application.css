@@ -55,3 +55,9 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+.space_div {
+ margin: 40px 60px 0px 60px;
+ list-style-type: none;
+
+}

@@ -4,9 +4,11 @@
 
 <ul>
   <% @messages.each do |message| %>
+    <div class="space_div">
     <h3><%= message.user.name %></h3>
     <li><%= message.subject %></li>
     <li><%= message.content %></li>
+    </div>
   <%end%>
 </ul>
 
