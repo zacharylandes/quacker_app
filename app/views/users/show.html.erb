@@ -1,27 +1,34 @@
-<article>
 
-    <h1>Thanks, <%= @user.name %></h1>
-  <div>
-    <div >
-      <%= form_for @user do |f| %>
-        <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :age %>
-          <%= f.text_field :age, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :location, "Class" %>
-          <%= f.text_field :location, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :about_you %>
-          <%= f.text_area :about_you, class: "form-control" %>
-        </div>
 
-      <% end %>
-    </div>
+<h1>Thanks, <%= @user.name %></h1>
+<div>
+  <div >
+   <div class="form-group">
+     Age: <%=@user.age %>
+   </div>
+   <div class="form-group">
+     Location: <%=@user.location %>
+   </div>
+   <div class="form-group">
+    About You:   <%=@user.about_you %>
   </div>
-</article>
+</div>
+</div>
+<div>
+  Would you like to add a post?
+  <%= form_for @message do |f| %>
+  <%= f.hidden_field :user_id %>
+  <div><%= f.text_field :subject %>
+   <%= f.label :subject %>
+ </div>
+ <div>
+  <%= f.text_area :content %>
+  <%= f.label :content %>
+  <div>
+    <%= f.submit "Make Post" %>
+
+  </div>
+</div>
+<% end %>
+</div>
+

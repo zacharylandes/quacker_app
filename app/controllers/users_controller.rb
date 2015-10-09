@@ -4,15 +4,17 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    render text: "Thanks"
+
   end
 
   def create
-  @user = User.new
-  redirect_to new_user_path
+  @user = User.create(user_params)
+  redirect_to user_path(@user)
   end
 
   def show
+ @user = User.find(params[:id])
+ @message = @user.messages.new
 
   end
 
@@ -20,5 +22,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+   private
+  def user_params
+    params.require(:user).permit(:name,:age,:location,:about_you, :user_id)
   end
 end
