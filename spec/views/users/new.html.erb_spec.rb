@@ -4,7 +4,7 @@ RSpec.describe "users/new.html.erb", type: :feature do
   describe'shows ' do
     it 'has the new user form' do
       visit new_user_path
-    expect(page).to have_content('Create Your Profile')
+    expect(page).to have_content('Create Profile')
     end
   end
    describe'has submit buttom ' do
