@@ -5,18 +5,16 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-
   end
 
   def create
-  @user = User.create(user_params)
-  redirect_to user_path(@user)
+    @user = User.create(user_params)
+    redirect_to user_path(@user)
   end
 
   def show
     @user = User.find(params[:id])
     @message = @user.messages.new
-
   end
 
   def update
@@ -24,8 +22,9 @@ class UsersController < ApplicationController
 
   def destroy
   end
-   private
+
+  private
   def user_params
-    params.require(:user).permit(:name,:age,:location,:about_you, :user_id)
+    params.require(:user).permit(:name, :age, :location, :about_you, :user_id)
   end
 end
