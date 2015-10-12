@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   get 'messages/index'
-
   get 'messages/create'
+
+  post 'site/sign_in', as: 'sign_in'
 
   root 'site#index'
   get '/register' => 'site#register'
