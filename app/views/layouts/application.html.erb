@@ -12,6 +12,8 @@
   </head>
   <body>
     <!-- Fixed navbar -->
+
+
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -37,6 +39,16 @@
 
     <!-- Begin page content -->
     <main class="container">
+    <% if current_user %>
+      Hi <%= current_user.name %>
+      <%= link_to 'logout', logout_path %>
+    <% else %>
+      <%= form_for User.new, url: sign_in_path do |f|  %>
+        <%= f.text_field :name %>
+        <%= f.password_field :password %>
+        <%= f.submit 'Login ' %>
+      <% end %>
+    <% end %>
       <%= yield %>
     </main>
 

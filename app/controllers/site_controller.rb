@@ -17,6 +17,11 @@ class SiteController < ApplicationController
     redirect_to root_path
   end
 
+  def logout
+    session[:current_user_id] = nil
+    redirect_to root_path
+  end
+
   private
   def message_params
     params.require(:message).permit(:subject,:content, :id)
