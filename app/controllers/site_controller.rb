@@ -8,13 +8,13 @@ class SiteController < ApplicationController
   def register
   end
 
-  def sign_up
-    if user = User.find_by(user_params)
+  def log_in
+    if user = User.find_by(name: user_params[:name], password: user_params[:password])
       session[:current_user_id] = user.id
-      redirect_to root_path
     else
-      render text: "Thou shall not pass!"
+       flash[:error] = "Thou shall not pass!"
     end
+      redirect_to root_path
   end
 
   private
