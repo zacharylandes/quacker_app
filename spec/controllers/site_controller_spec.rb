@@ -4,10 +4,14 @@ RSpec.describe SiteController, type: :controller do
   describe "Post sign_up" do
 
     context "valid login" do
-      let(:new_user) {FactoryGirl.create(:user)}
+      let!(:new_user) {FactoryGirl.create(:user)}
+      before {post :log_in,  user: {name: new_user.name, password: new_user.password}}
       it "sets current user if succesfull" do
-        post :log_in,  user: {name: new_user.name, password: new_user.password}
         expect(session[:current_user_id]).to eq(new_user[:id])
+      end
+
+      it "redirestc to root_path" do
+        expect(response).to redirect_to root_path
       end
     end
 
