@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :user do
-    name "MyString"
-    age 1
-    location "MyString"
-    about_you "MyText"
-    password "MyString"
+    name "Sven"
+    age 28
+    location "Sweden"
+    about_you "Totally Swedish"
+    password "sweden"
   end
 
 end

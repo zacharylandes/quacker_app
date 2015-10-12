@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'messages/create'
 
+  post "site/sign_up", as: "sign_up"
   root 'site#index'
   get '/register' => 'site#register'
   post '/search_results' => 'search_results#search_results'
