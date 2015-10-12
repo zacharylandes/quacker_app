@@ -9,8 +9,10 @@ class SiteController < ApplicationController
   end
 
   def sign_in
-    if user = User.find_by(login_params)
+    if user = User.find_by(name: login_params[:name], password: login_params[:password])
       session[:current_user_id] = user.id
+    else
+      flash[:error] = 'Whaaat, you forgot something'
     end
     redirect_to root_path
   end
