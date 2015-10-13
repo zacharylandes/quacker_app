@@ -34,6 +34,10 @@ body {
   background-color: #f5f5f5;
 }
 
+.login {
+  float: right;
+  vertical-align: bottom;
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -71,4 +75,8 @@ code {
 
 .content {
   font-size: 18px;
+}
+
+.notice {
+  text-color: #red;
 }

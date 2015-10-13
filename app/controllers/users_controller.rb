@@ -14,10 +14,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(id: session[:current_user_id])
+    # User.find(params[:id])
     @message = @user.messages.new
 
   end
+
+
 
   def update
   end
@@ -26,6 +29,6 @@ class UsersController < ApplicationController
   end
    private
   def user_params
-    params.require(:user).permit(:name,:age,:location,:about_you, :user_id)
+    params.require(:user).permit(:name,:password, :age,:location,:about_you, :user_id)
   end
 end

@@ -4,9 +4,13 @@ Rails.application.routes.draw do
 
   get 'messages/create'
 
+  post 'site/sign_in', as: 'sign_in'
+  get 'site/logout', as: 'logout'
+
   root 'site#index'
   get '/register' => 'site#register'
   post '/search_results' => 'search_results#search_results'
+
 
   resources :users
   resources :messages

@@ -1,4 +1,3 @@
-
 <article>
   <h1><%= @user.name %></h1>
   <div>
@@ -17,17 +16,17 @@
   <div>
     Would you like to add a post?
     <%= form_for @message do |f| %>
-    <%= f.hidden_field :user_id %>
-    <div><%= f.text_field :subject %>
-     <%= f.label :subject %>
-   </div>
-   <div>
-    <%= f.text_area :content %>
-    <%= f.label :content %>
-    <div>
-      <%= f.submit "Make Post" %>
-
-    </div>
+      <%= f.hidden_field :user_id %>
+        <div>
+          <%= f.text_field :subject %>
+          <%= f.label :subject %>
+        </div>
+        <div>
+          <%= f.text_area :content %>
+          <%= f.label :content %>
+        <div>
+          <%= f.submit "Make Post" %>
+        </div>
   </div>
   <% end %>
   </div>

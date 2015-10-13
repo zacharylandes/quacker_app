@@ -8,7 +8,6 @@ class SiteController < ApplicationController
   def register
   end
 
-
   private
   def message_params
     params.require(:message).permit(:subject,:content, :id)

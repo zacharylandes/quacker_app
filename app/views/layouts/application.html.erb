@@ -31,12 +31,27 @@
             <li><%= link_to 'Create Account', new_user_path %></li>
             <li><%= link_to 'Users', users_path %></li>
           </ul>
+          <div class="login">
+            <% if current_user %>
+              Hi <%= current_user.name %>
+              <%= link_to 'logout', logout_path %>
+            <% else %>
+              <%= form_for User.new, url: sign_in_path do |f|  %>
+                <%= f.text_field :name %>
+                <%= f.password_field :password %>
+                <%= f.submit 'Login ' %>
+              <% end %>
+            <% end %>
+          </div>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <!-- Begin page content -->
     <main class="container">
+      <% if flash[:error] %>
+        <div class="notice"><%= flash[:error] %></div>
+      <% end %>
       <%= yield %>
     </main>
 
