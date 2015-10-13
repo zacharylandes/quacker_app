@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'messages/create'
 
+  post "site/log_in", as: "log_in"
+
   root 'site#index'
   get '/register' => 'site#register'
   post '/search_results' => 'search_results#search_results'
