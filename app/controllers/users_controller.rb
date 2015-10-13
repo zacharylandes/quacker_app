@@ -5,22 +5,21 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-
   end
 
   def create
-  @user = User.create(user_params)
-  redirect_to user_path(@user)
+    @user = User.create(user_params)
+    @user.avatar = params[:file]
+
+    redirect_to user_path(@user)
   end
 
   def show
     @user = User.find(params[:id])
     @message = @user.messages.new
-
   end
 
-  def update
-  end
+
 
   def destroy
   end

@@ -4,5 +4,11 @@
   Age: <%= f.text_field :age %><br />
   Location: <%= f.text_field :location %><br />
   About you: <%= f.text_area :about_you %><br />
+  About you: <%= f.text_area :about_you %><br />
   <%= f.submit "Create Profile" %>
+<% end %>
+
+<%= form_for @user do |f| %>
+<%= f.file_field :picture %>
+<%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
