@@ -4,8 +4,6 @@
 
 <ul>
   <% @messages.each do |message| %>
-
-
     <div class="space_div">
     <h3><%= link_to message.user.name, user_path(message.user)  %></h3>
 
